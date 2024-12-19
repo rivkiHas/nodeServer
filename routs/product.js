@@ -11,5 +11,5 @@ router.delete("/:id", authAdmin, deleteProduct);
 router.post("/", authAdmin, addProduct);
 router.put("/:id", authAdmin, updateProduct);
 router.get("/category/:category", getProductByCategory);
-
+ 
 export default router;

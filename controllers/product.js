@@ -97,7 +97,7 @@ export const deleteProduct = async (req, res) => {
             return res.status(404).json({ type: "no product to delete", message: "no product with such id to delete" })
         // if (req.user.role != "ADMIN" && product._Id != req.user._id)
         //     res.status(403).json({ type: "not allowed", message: "you are not allowed to delete course only manager or if you added this course" })
-        product = await ProductModel.findByIdAndDelete(id)
+
         return res.json(product)
     }
     catch (err) {
@@ -109,7 +109,7 @@ export const deleteProduct = async (req, res) => {
 
 export const addProduct = async (req, res) => {
     let { productName, price, description, size, metal, category } = req.body;
-
+    console.log("from add")
     if (!productName)
         return res.status(404).json({ type: "missing params", message: "missing details in body productName " })
 
